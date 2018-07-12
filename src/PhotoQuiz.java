@@ -44,8 +44,9 @@ public class PhotoQuiz {
 		// 9. remove the component from the quiz window (you may not see the effect of this until step 12)
         quizWindow.remove(Holder);
 		// 10. find another image and create it (might take more than one line of code)
-        
-		// 11. add the second image to the quiz window
+        String picture = ("https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwinqankn5jcAhWLwFQKHdMiCTAQjRx6BAgBEAU&url=http%3A%2F%2Faustinally.wikia.com%2Fwiki%2FFile%3ARandom_picture_of_shark.png&psig=AOvVaw1Lv0CVwCaemKHme33PoRyO&ust=1531439660551467");
+    
+        // 11. add the second image to the quiz window
 
 		// 12. pack the quiz window
 
