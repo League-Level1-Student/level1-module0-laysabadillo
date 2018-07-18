@@ -18,6 +18,7 @@ public class PhotoQuiz {
 
 	public static void main(String[] args) throws Exception {
 		JFrame quizWindow = new JFrame();
+		int score = 0;
 		quizWindow.setVisible(true);
                 quizWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   // This will make sure the program exits when you close the window
 
@@ -31,10 +32,12 @@ public class PhotoQuiz {
         quizWindow.add(Holder);
 		// 5. call the pack() method on the quiz window
         quizWindow.pack();
+        Holder.addMouseMotionListener(null);
 		// 6. ask a question that relates to the image
         String answer = JOptionPane.showInputDialog(null, "What Animal Is It?");
 		// 7. print "CORRECT" if the user gave the right answer
-        if(answer.equalsIgnoreCase("lion")) {
+        if(answer.equals("lion")) {
+        	score++;
         	JOptionPane.showMessageDialog(null, "CORRECT");
         }
 		// 8. print "INCORRECT" if the answer is wrong
@@ -44,18 +47,22 @@ public class PhotoQuiz {
 		// 9. remove the component from the quiz window (you may not see the effect of this until step 12)
         quizWindow.remove(Holder);
 		// 10. find another image and create it (might take more than one line of code)
-        String picture = ("https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwinqankn5jcAhWLwFQKHdMiCTAQjRx6BAgBEAU&url=http%3A%2F%2Faustinally.wikia.com%2Fwiki%2FFile%3ARandom_picture_of_shark.png&psig=AOvVaw1Lv0CVwCaemKHme33PoRyO&ust=1531439660551467");
-    
+        String picture = ("https://indywithkids.com/wp-content/uploads/2018/06/fireworks.jpg");
+        Component Holder2;
+        Holder2 = createImage(picture);
         // 11. add the second image to the quiz window
-
+        quizWindow.add(Holder2);
 		// 12. pack the quiz window
-
+        quizWindow.pack();
 		// 13. ask another question
-
+        String answer2 = JOptionPane.showInputDialog(null, "What Is It?");
 		// 14+ check answer, say if correct or incorrect, etc.
-
-	}
-
+        if(answer2.equals("fireworks")) {
+        	score++; 
+        	JOptionPane.showMessageDialog(null, "CORRECT");
+        }else {
+        	JOptionPane.showMessageDialog(null, "INCORRECT");}
+        }
 	private static Component createImage(String imageUrl) throws MalformedURLException {
 		URL url = new URL(imageUrl);
 		Icon icon = new ImageIcon(url);
@@ -66,6 +73,7 @@ public class PhotoQuiz {
 	/* OPTIONAL */
 	// *14. add scoring to your quiz
 	// *15. make something happen when mouse enters image (imageComponent.addMouseMotionListener()) 
+	
 }
 
 
